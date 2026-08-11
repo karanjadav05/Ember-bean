@@ -31,7 +31,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#120D0A] text-[#E8D8BD] selection:bg-[#C66A32] selection:text-[#120D0A] font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-[#120D0A] text-[#E8D8BD] selection:bg-[#C66A32] selection:text-[#120D0A] font-sans antialiased">
       
       {/* Top Fixed Minimal Luxury Navbar with BREW HUD */}
       <Navbar activeScene={activeScene} onNavigate={handleNavigate} />

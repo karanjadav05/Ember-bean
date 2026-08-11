@@ -58,10 +58,11 @@ export const CoffeeJourney: React.FC<CoffeeJourneyProps> = ({
     <div
       ref={journeyRef}
       id="journey"
-      className="relative w-full h-[650vh] bg-[#120D0A] bg-grain"
+      className="relative w-full bg-[#120D0A] bg-grain"
+      style={{ height: '650vh' }}
     >
       {/* Sticky Window Container */}
-      <div className="sticky top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center">
+      <div className="sticky top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center pointer-events-none">
         
         {/* Interactive Canvas Visuals */}
         <CoffeeCanvas progress={progress} />
@@ -77,11 +78,10 @@ export const CoffeeJourney: React.FC<CoffeeJourneyProps> = ({
           
           {/* SCENE 01 — THE ARRIVAL */}
           <div
-            className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 md:px-12 transition-all duration-700 transform"
+            className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 md:px-12 transition-all duration-700 transform pointer-events-none"
             style={{
               opacity: getSceneOpacity(1),
               transform: `scale(${0.95 + getSceneOpacity(1) * 0.05}) translateY(${(1 - getSceneOpacity(1)) * 20}px)`,
-              pointerEvents: getSceneOpacity(1) > 0.5 ? 'auto' : 'none',
             }}
           >
             <div className="max-w-4xl mx-auto flex flex-col items-center">
@@ -109,11 +109,10 @@ export const CoffeeJourney: React.FC<CoffeeJourneyProps> = ({
 
           {/* SCENE 02 — THE BEANS */}
           <div
-            className="absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 transform"
+            className="absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 transform pointer-events-none"
             style={{
               opacity: getSceneOpacity(2),
               transform: `translateY(${(1 - getSceneOpacity(2)) * 30}px)`,
-              pointerEvents: getSceneOpacity(2) > 0.5 ? 'auto' : 'none',
             }}
           >
             <div className="bg-[#120D0A]/80 backdrop-blur-md border border-[#3A2115]/80 p-8 md:p-12 rounded-sm max-w-2xl text-left shadow-2xl">
@@ -149,11 +148,10 @@ export const CoffeeJourney: React.FC<CoffeeJourneyProps> = ({
 
           {/* SCENE 03 — THE GRIND */}
           <div
-            className="absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 transform"
+            className="absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 transform pointer-events-none"
             style={{
               opacity: getSceneOpacity(3),
               transform: `translateY(${(1 - getSceneOpacity(3)) * 30}px)`,
-              pointerEvents: getSceneOpacity(3) > 0.5 ? 'auto' : 'none',
             }}
           >
             <div className="bg-[#120D0A]/80 backdrop-blur-md border border-[#3A2115]/80 p-8 md:p-12 rounded-sm max-w-xl text-center shadow-2xl">
@@ -183,11 +181,10 @@ export const CoffeeJourney: React.FC<CoffeeJourneyProps> = ({
 
           {/* SCENE 04 — THE BLOOM */}
           <div
-            className="absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 transform"
+            className="absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 transform pointer-events-none"
             style={{
               opacity: getSceneOpacity(4),
               transform: `translateY(${(1 - getSceneOpacity(4)) * 30}px)`,
-              pointerEvents: getSceneOpacity(4) > 0.5 ? 'auto' : 'none',
             }}
           >
             <div className="bg-[#120D0A]/80 backdrop-blur-md border border-[#3A2115]/80 p-8 md:p-12 rounded-sm max-w-xl text-center shadow-2xl">
@@ -214,11 +211,10 @@ export const CoffeeJourney: React.FC<CoffeeJourneyProps> = ({
 
           {/* SCENE 05 — THE POUR */}
           <div
-            className="absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 transform"
+            className="absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 transform pointer-events-none"
             style={{
               opacity: getSceneOpacity(5),
               transform: `translateY(${(1 - getSceneOpacity(5)) * 30}px)`,
-              pointerEvents: getSceneOpacity(5) > 0.5 ? 'auto' : 'none',
             }}
           >
             <div className="bg-[#120D0A]/80 backdrop-blur-md border border-[#3A2115]/80 p-8 md:p-12 rounded-sm max-w-xl text-center shadow-2xl">
@@ -247,11 +243,10 @@ export const CoffeeJourney: React.FC<CoffeeJourneyProps> = ({
 
           {/* SCENE 06 — THE WAIT */}
           <div
-            className="absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 transform"
+            className="absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 transform pointer-events-none"
             style={{
               opacity: getSceneOpacity(6),
               transform: `scale(${0.98 + getSceneOpacity(6) * 0.02})`,
-              pointerEvents: getSceneOpacity(6) > 0.5 ? 'auto' : 'none',
             }}
           >
             <span className="text-xs font-mono tracking-[0.35em] text-[#C66A32] uppercase mb-4">
@@ -268,11 +263,10 @@ export const CoffeeJourney: React.FC<CoffeeJourneyProps> = ({
 
           {/* SCENE 07 — THE CUP */}
           <div
-            className="absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 transform"
+            className="absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 transform pointer-events-none"
             style={{
               opacity: getSceneOpacity(7),
               transform: `translateY(${(1 - getSceneOpacity(7)) * 20}px)`,
-              pointerEvents: getSceneOpacity(7) > 0.5 ? 'auto' : 'none',
             }}
           >
             <span className="text-xs font-mono tracking-[0.35em] text-[#C66A32] uppercase mb-4">
@@ -288,11 +282,10 @@ export const CoffeeJourney: React.FC<CoffeeJourneyProps> = ({
 
           {/* SCENE 08 — THE SWEET MESSAGE */}
           <div
-            className="absolute inset-0 flex flex-col items-center justify-center transition-all duration-1000 transform"
+            className="absolute inset-0 flex flex-col items-center justify-center transition-all duration-1000 transform pointer-events-none"
             style={{
               opacity: getSceneOpacity(8),
               transform: `scale(${0.96 + getSceneOpacity(8) * 0.04})`,
-              pointerEvents: getSceneOpacity(8) > 0.4 ? 'auto' : 'none',
             }}
           >
             <div className="bg-[#120D0A]/90 backdrop-blur-lg border border-[#3A2115] p-10 md:p-16 rounded-sm max-w-2xl text-center shadow-2xl">
@@ -311,7 +304,7 @@ export const CoffeeJourney: React.FC<CoffeeJourneyProps> = ({
 
               <button
                 onClick={onRestart}
-                className="inline-flex items-center space-x-3 bg-[#C66A32] hover:bg-[#8C5A35] text-[#120D0A] font-semibold text-xs uppercase tracking-[0.25em] px-8 py-4 rounded-sm transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer shadow-lg"
+                className="inline-flex items-center space-x-3 bg-[#C66A32] hover:bg-[#8C5A35] text-[#120D0A] font-semibold text-xs uppercase tracking-[0.25em] px-8 py-4 rounded-sm transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer shadow-lg pointer-events-auto"
               >
                 <span>TAKE ANOTHER SIP</span>
                 <RotateCcw size={16} />

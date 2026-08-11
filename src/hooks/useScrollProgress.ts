@@ -55,10 +55,16 @@ export function useScrollProgress(containerRef: RefObject<HTMLElement | null>): 
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial calculation
+    window.addEventListener('resize', handleScroll, { passive: true });
+
+    // Initial calculation + immediate microtask check after DOM ref mounts
+    handleScroll();
+    const timer = setTimeout(handleScroll, 50);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+      clearTimeout(timer);
       cancelAnimationFrame(animationFrameId);
     };
   }, [containerRef]);
